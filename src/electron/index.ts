@@ -13,7 +13,7 @@ const echoStringValue = ([options]: any) => {
     return new Promise((resolve) => resolve(options[0].value))
 }
 
-const openDatabase = ([options]: any) => {
+const openDatabase = (options: any) => {
     let databaseName = options[0].name
     
     if(openDatabases[databaseName] != null) {
@@ -104,7 +104,7 @@ const backgroundExecuteSqlBatch = async ([options]: any) => {
     return resultList
 }
 
-const closeDatabase = ([options]: any) => {
+const closeDatabase = (options: any) => {
     let databaseName = options[0].path
 
     let db = openDatabases[databaseName]
