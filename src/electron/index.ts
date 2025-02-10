@@ -9,7 +9,7 @@ const openDatabases: DatabaseMap = {}
 const closedDabases: DatabaseMap = {}
 
 
-const echoStringValue = ([options]: any) => {
+const echoStringValue = (options: any) => {
     return new Promise((resolve) => resolve(options[0].value))
 }
 
@@ -83,7 +83,7 @@ const executeSql = (db: Database, sql: string, params: any) => {
     })
 }
 
-const backgroundExecuteSqlBatch = async ([options]: any) => {
+const backgroundExecuteSqlBatch = async (options: any) => {
     let databaseName = options[0].dbargs.dbname
 
     if(openDatabases[databaseName] == null)
@@ -114,7 +114,7 @@ const closeDatabase = (options: any) => {
     delete openDatabases[databaseName]
 }
 
-const deleteDatabase = ([options]: any) => {
+const deleteDatabase = (options: any) => {
     let databaseName = options[0].path
 
     if(closedDabases[databaseName] != null) {
